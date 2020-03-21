@@ -108,7 +108,7 @@ function sendData(id, value) {
 
     axios.get(url)
         .then(response => {
-            console.log(id)
+            console.log(id, value)
             console.log("ok");
         })
         .catch(error => {

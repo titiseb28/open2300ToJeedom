@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ws2300 version="1.0">
 	<Date>2020-03-21</Date>
-	<Time>10:50:58</Time>
+	<Time>17:19:48</Time>
 	<Temperature>
 		<Indoor>
-			<Value>20.8</Value>
+			<Value>20.3</Value>
 			<Min>18.6</Min>
 			<Max>24.4</Max>
 			<MinTime>09:12</MinTime>
@@ -13,7 +13,7 @@
 			<MaxDate>2001-01-01</MaxDate>
 		</Indoor>
 		<Outdoor>
-			<Value>6.1</Value>
+			<Value>7.3</Value>
 			<Min>4.9</Min>
 			<Max>31.3</Max>
 			<MinTime>08:35</MinTime>
@@ -24,26 +24,26 @@
 	</Temperature>
 	<Humidity>
 		<Indoor>
-			<Value>48</Value>
-			<Min>48</Min>
+			<Value>46</Value>
+			<Min>45</Min>
 			<Max>54</Max>
-			<MinTime>10:50</MinTime>
+			<MinTime>16:56</MinTime>
 			<MinDate>2020-03-21</MinDate>
 			<MaxTime>09:17</MaxTime>
 			<MaxDate>2020-03-20</MaxDate>
 		</Indoor>
 		<Outdoor>
-			<Value>78</Value>
+			<Value>76</Value>
 			<Min>33</Min>
 			<Max>78</Max>
 			<MinTime>00:38</MinTime>
 			<MinDate>2001-01-01</MinDate>
-			<MaxTime>10:50</MaxTime>
+			<MaxTime>11:37</MaxTime>
 			<MaxDate>2020-03-21</MaxDate>
 		</Outdoor>
 	</Humidity>
 	<Dewpoint>
-		<Value>2.5</Value>
+		<Value>3.3</Value>
 		<Min>0.8</Min>
 		<Max>14.5</Max>
 		<MinTime>08:35</MinTime>
@@ -52,25 +52,25 @@
 		<MaxDate>2001-01-01</MaxDate>
 	</Dewpoint>
 	<Wind>
-		<Value>5.8</Value>
+		<Value>14.4</Value>
 		<Direction>
-			<Text>NNE</Text>
-			<Dir0>22.5</Dir0>
-			<Dir1>22.5</Dir1>
+			<Text>ENE</Text>
+			<Dir0>67.5</Dir0>
+			<Dir1>67.5</Dir1>
 			<Dir2>45.0</Dir2>
-			<Dir3>45.0</Dir3>
-			<Dir4>45.0</Dir4>
+			<Dir3>67.5</Dir3>
+			<Dir4>67.5</Dir4>
 			<Dir5>45.0</Dir5>
 		</Direction>
 		<Min>0.0</Min>
 		<Max>22.3</Max>
-		<MinTime>10:24</MinTime>
+		<MinTime>17:02</MinTime>
 		<MinDate>2020-03-21</MinDate>
 		<MaxTime>09:15</MaxTime>
 		<MaxDate>2020-03-21</MaxDate>
 	</Wind>
 	<Windchill>
-		<Value>6.1</Value>
+		<Value>2.0</Value>
 		<Min>-3.4</Min>
 		<Max>31.3</Max>
 		<MinTime>09:17</MinTime>
@@ -82,13 +82,13 @@
 		<OneHour>
 			<Value>0.00</Value>
 			<Max>0.00</Max>
-			<MaxTime>10:48</MaxTime>
+			<MaxTime>17:20</MaxTime>
 			<MaxDate>2020-03-21</MaxDate>
 		</OneHour>
 		<TwentyFourHour>
 			<Value>0.00</Value>
 			<Max>0.00</Max>
-			<MaxTime>10:45</MaxTime>
+			<MaxTime>17:19</MaxTime>
 			<MaxDate>2020-03-21</MaxDate>
 		</TwentyFourHour>
 		<Total>
@@ -98,10 +98,10 @@
 		</Total>
 	</Rain>
 	<Pressure>
-		<Value>996.600</Value>
-		<Min>996.500</Min>
+		<Value>995.000</Value>
+		<Min>995.000</Min>
 		<Max>999.500</Max>
-		<MinTime>10:50</MinTime>
+		<MinTime>17:20</MinTime>
 		<MinDate>2020-03-21</MinDate>
 		<MaxTime>00:00</MaxTime>
 		<MaxDate>2001-01-01</MaxDate>
