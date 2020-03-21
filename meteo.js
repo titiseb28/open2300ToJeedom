@@ -1,26 +1,47 @@
 const xml2js = require('xml2js');
 const fs = require('fs');
 const parser = new xml2js.Parser({ attrkey: "ATTR" });
+const config = require('./config.js')
+const axios = require('axios');
 
-// this example reads the file synchronously
-// you can read it asynchronously also
+
 let xml_string = fs.readFileSync("currentxml.xml", "utf8");
 
 parser.parseString(xml_string, function (error, result) {
     if (error === null) {
 
-        let temperatureOut = result.ws2300.Temperature[0].Outdoor[0].Value[0]
-        let humidityOut = result.ws2300.Humidity[0].Outdoor[0].Value[0]
-        let dewPoinnt = result.ws2300.Dewpoint[0].Value[0]
-        let windChill = result.ws2300.Windchill[0].Value[0]
-        let pressure = result.ws2300.Pressure[0].Value[0]
-        let rainOneHour = result.ws2300.Rain[0].OneHour[0].Value[0]
-        let rainTwntyFourHour = result.ws2300.Rain[0].TwentyFourHour[0].Value[0]
-        let windDirection = windDirectionF(result.ws2300.Wind[0].Direction[0].Text[0])
-        let windValue = result.ws2300.Wind[0].Value[0]
-        let pressureTendency = pressionF(result.ws2300.Pressure[0].Tendency[0])
-        let forecast = forecastF(result.ws2300.Forecast[0])
+        // temperatureOut
+        sendData(config.idTemperatureOut, result.ws2300.Temperature[0].Outdoor[0].Value[0])
 
+        // humidityOut
+        sendData(config.idHumidityOut, result.ws2300.Humidity[0].Outdoor[0].Value[0])
+
+        // dewPoinnt 
+        sendData(config.idDewPoinnt, result.ws2300.Dewpoint[0].Value[0])
+
+        // windChill 
+        sendData(config.idWindChill, result.ws2300.Windchill[0].Value[0])
+
+        // pressure 
+        sendData(config.idPressure, result.ws2300.Pressure[0].Value[0])
+
+        // rainOneHour 
+        sendData(config.idRainOneHour, result.ws2300.Rain[0].OneHour[0].Value[0])
+
+        // rainTwntyFourHour 
+        sendData(config.idRainTwntyFourHour, result.ws2300.Rain[0].TwentyFourHour[0].Value[0])
+
+        // windDirection 
+        sendData(config.idWindDirection, windDirectionF(result.ws2300.Wind[0].Direction[0].Text[0]))
+
+        // windValue 
+        sendData(config.idWindValue, result.ws2300.Wind[0].Value[0])
+
+        // pressureTendency 
+        sendData(config.idPressureTendency, pressionF(result.ws2300.Pressure[0].Tendency[0]))
+
+        // forecast 
+        sendData(config.idForecast, forecastF(result.ws2300.Forecast[0]))
     }
     else {
         console.log(error);
@@ -80,6 +101,19 @@ function windDirectionF(current) {
         case "NNW":
             return "Nord-nord-ouest"
     }
+}
+
+function sendData(id, value) {
+    let url = config.urlServe + "/core/api/jeeApi.php?apikey=" + config.apikey + "&type=virtual&type=virtual&id=" + id + "&value=" + value
+
+    axios.get(url)
+        .then(response => {
+            console.log(id)
+            console.log("ok");
+        })
+        .catch(error => {
+            console.log(error);
+        });
 }
 
 // type de prevision:
