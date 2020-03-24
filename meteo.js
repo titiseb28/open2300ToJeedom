@@ -5,7 +5,7 @@ const config = require('./config.js')
 const axios = require('axios');
 
 
-let xml_string = fs.readFileSync("currentxml.xml", "utf8");
+let xml_string = fs.readFileSync("/tmp/currentxml.xml", "utf8");
 
 parser.parseString(xml_string, function (error, result) {
     if (error === null) {
@@ -50,7 +50,7 @@ parser.parseString(xml_string, function (error, result) {
 
 function forecastF(current) {
     if (current == "Sunny") {
-        return "Ensoleillé"
+        return "Ensoleille"
     } else if (current == "Cloudy") {
         return "Nuageux"
     } else {
